@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>修改用户信息</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>姓名</th>
+        <th>密码</th>
+        <th>权限</th>
+        <th>邮箱</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <form method="post">
+                {% csrf_token %}
+                <td>
+                    <input type="text" name="name" placeholder="用户名" value="{{ row_object.name }}">
+                </td>
+                <td>
+                    <input type="text" name="password" placeholder="密码" value="{{ row_object.password }}">
+                </td>
+                <td>
+                    <input type="text" name="role" placeholder="权限" value="{{ row_object.role }}">
+                </td>
+                <td>
+                    <input type="text" name="email" placeholder="邮箱" value="{{ row_object.email }}">
+                </td>
+                <td>
+                    <input type="submit" value="提交">
+                </td>
+            </form>
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>

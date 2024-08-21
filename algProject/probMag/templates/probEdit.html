@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>修改问题实例信息</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>问题名称</th>
+        <th>问题描述</th>
+        <th>问题维度</th>
+        <th>约束个数</th>
+        <th>价值矩阵</th>
+        <th>权重矩阵</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <form method="post">
+                {% csrf_token %}
+                <td>
+                    <input type="text" name="name" placeholder="问题名称" value="{{ row_object.prob_name }}">
+                </td>
+                <td>
+                    <input type="text" name="des" placeholder="问题描述" value="{{ row_object.description }}">
+                </td>
+                <td>
+                    <input type="text" name="dim" placeholder="问题维度" value="{{ row_object.dimensions }}">
+                </td>
+                <td>
+                    <input type="text" name="obj" placeholder="约束个数" value="{{ row_object.objectives }}">
+                </td>
+                <td>
+                    <input type="text" name="val" placeholder="价值矩阵" value="{{ row_object.value_vector }}">
+                </td>
+                <td>
+                    <input type="text" name="val" placeholder="价值矩阵" value="{{ row_object.value_vector }}">
+                </td>
+                <td>
+                    <input type="text" name="weight" placeholder="权重矩阵"  value="{{ row_object.weight_matrix }}">
+                </td>
+                <td>
+                    <input type="submit" value="提交">
+                </td>
+            </form>
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>
