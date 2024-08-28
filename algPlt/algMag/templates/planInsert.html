@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>添加执行方案</h1>
+<form method="post">
+    {% csrf_token %}
+
+    <input type="text" id="name" name="name" placeholder="方案名">
+
+    <label for="algSelect">算法:</label>
+    <select id="algSelect" name="alg">
+        {% for alg in alg_list %}
+            <option value="{{ alg.id }}">{{ alg.id }}. {{ alg.alg_name }}</option>
+        {% endfor %}
+    </select>
+
+    <input type="text" id="alg" name="算法ID">
+
+    <label for="probSelect">问题:</label>
+    <select id="probSelect" name="prob">
+        {% for prob in prob_list %}
+            <option value="{{ prob.id }}">{{ prob.id }}.{{ prob.prob_name }}</option>
+        {% endfor %}
+    </select>
+
+    <input type="text" id="prob" name="问题ID">
+
+    <input type="text" id="count" name="count" placeholder="执行次数">
+
+    <input type="text" id="time" name="time" placeholder="执行时间">
+
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>

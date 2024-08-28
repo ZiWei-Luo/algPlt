@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>参数列表</h1>
+<a href="http://127.0.0.1:8000/para/{{ nid }}/insert/">添加</a>
+<a href="http://127.0.0.1:8000/alg/list/">添加完成</a>
+<a href="http://127.0.0.1:8000/plan/list/">参数设置完成</a>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>参数名</th>
+        <th>参数类型</th>
+        <th>参数描述</th>
+        <th>参数值</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {%  for obj in data_list  %}
+    <tr>
+        <td>{{ obj.id }}</td>
+        <td>{{ obj.parm_name }}</td>
+        <td>{{ obj.type }}</td>
+        <td>{{ obj.description }}</td>
+        <td>{{ obj.value }}</td>
+    <td>
+            <a href="http://127.0.0.1:8000/para/{{ obj.id }}/update/">编辑</a>
+            <a href="http://127.0.0.1:8000/para/delect/?nid={{ obj.id }}">删除</a>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

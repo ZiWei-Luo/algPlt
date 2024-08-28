@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>执行方案</h1>
+<a href="http://127.0.0.1:8000/plan/insert">添加</a>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>方案名</th>
+        <th>算法</th>
+        <th>问题</th>
+        <th>执行时间</th>
+        <th>执行次数</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {%  for obj in data_list  %}
+    <tr>
+        <td>{{ obj.id }}</td>
+        <td>{{ obj.name }}</td>
+        <td>{{ obj.algorithms }}</td>
+        <td>{{ obj.problems }}</td>
+        <td>{{ obj.execution_count }}</td>
+        <td>{{ obj.start_time }}</td>
+        <td>
+            <a href="http://127.0.0.1:8000/plan/{{ obj.id }}/update/">编辑</a>
+            <a href="http://127.0.0.1:8000/plan/delect/?nid={{ obj.id }}">删除</a>
+             <a href="http://127.0.0.1:8000/plan/exe/?nid={{ obj.id }}">执行</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

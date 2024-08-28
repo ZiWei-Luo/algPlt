@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>修改执行方案信息</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>算法名</th>
+    </tr>
+    </thead>
+    <tbody>
+    {%  for alg in alg_list  %}
+    <tr>
+        <td>{{ alg.id }}</td>
+        <td>{{ alg.alg_name }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>问题名称</th>
+    </tr>
+    </thead>
+    <tbody>
+    {%  for prob in prob_list  %}
+    <tr>
+        <td>{{ prob.id }}</td>
+        <td>{{ prob.prob_name }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<table border="1">
+    <thead>
+    <tr>
+        <th>方案名</th>
+        <th>算法</th>
+        <th>问题</th>
+        <th>执行时间</th>
+        <th>执行次数</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <form method="post">
+                {% csrf_token %}
+                <td>
+                    <input type="text" name="name" placeholder="方案名" value="{{ data_list.name }}">
+                </td>
+                <td>
+                    <input type="text" name="alg" placeholder="算法" value="{{ data_list.algorithms }}">
+                </td>
+                <td>
+                    <input type="text" name="prob" placeholder="问题" value="{{ data_list.problems }}">
+                </td>
+                <td>
+                    <input type="text" name="count" placeholder="执行次数" value="{{ data_list.execution_count }}">
+                </td>
+                <td>
+                    <input type="text" name="time" placeholder="执行时间" value="{{ data_list.start_time }}">
+                <td>
+                    <input type="submit" value="提交">
+                </td>
+            </form>
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>

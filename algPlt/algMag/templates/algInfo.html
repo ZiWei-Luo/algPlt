@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> 算法列表</h1>
+<a href="http://127.0.0.1:8000/alg/insert/">添加</a>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>算法名</th>
+        <th>算法描述</th>
+        <th>参数</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {%  for obj in data_list  %}
+    <tr>
+        <td>{{ obj.id }}</td>
+        <td>{{ obj.alg_name }}</td>
+        <td>{{ obj.description }}</td>
+        <td>
+            <a href="http://127.0.0.1:8000/para/{{ obj.id }}/list/">参数列表</a>
+        </td>
+        <td>
+            <a href="http://127.0.0.1:8000/alg/{{ obj.id }}/update/">编辑</a>
+            <a href="http://127.0.0.1:8000/alg/delect/?nid={{ obj.id }}">删除</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

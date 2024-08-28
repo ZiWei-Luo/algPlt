@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="en">
+<head>
+    <script>
+        function updateChartLink() {
+            var selectedIds = [];
+            document.querySelectorAll('input[name="selected_ids"]:checked').forEach(function(checkbox) {
+                selectedIds.push(checkbox.value);
+            });
+            var lineChartLink = document.getElementById('lineChartLink');
+            var boxChartLink = document.getElementById('boxChartLink');
+            if (selectedIds.length > 0) {
+                lineChartLink.href = '/res/lineChart/?nid=' + selectedIds.join('&nid=');
+                boxChartLink.href = '/res/boxChart/?nid=' + selectedIds.join('&nid=');
+            } else {
+                lineChartLink.href = '#'; // No selection
+                boxChartLink.href = '#';  // No selection
+            }
+        }
+    </script>
+</head>
+<body>
+<h1> 实验结果</h1>
+<form method="post" >
+    {% csrf_token %}
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>算法名</th>
+        <th>问题名</th>
+        <th>开始时间</th>
+        <th>结束时间</th>
+        <th>绘图</th>
+    </tr>
+    </thead>
+    <tbody>
+    {%  for obj in data_list  %}
+    <tr>
+        <td>{{ obj.id }}</td>
+        <td>{{ obj.algorithm_name }}</td>
+        <td>{{ obj.problem_name }}</td>
+        <td>{{ obj.start_time }}</td>
+        <td>{{ obj.end_time }}</td>
+        <td>
+            <input type="checkbox" id="checkbox{{ obj.id }}" name="selected_ids" value="{{ obj.id }}" onchange="updateChartLink()">
+        </td>
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{#    <a href="http://127.0.0.1:8000/char/{{ obj.id }}">绘制折线图</a>#}
+    <a id="lineChartLink" href="#" >绘制折线图</a>
+    <a id="boxChartLink" href="#" >绘制盒图</a>
+</form>
+</body>
+</html>
