@@ -9,37 +9,37 @@
 ### 1. 用户管理
 **功能描述**：平台管理员可对用户进行增删改查操作，确保用户信息的准确性和安全性。  
 
-![](D:\迅雷下载\图片1.png)
+![](https://github.com/ZiWei-Luo/algPlt/blob/master/algPlt/algMag/templates/图片1.png)
 
 ### 2. 问题实例管理
 **功能描述**：保存并管理常用的问题实例，支持对问题实例进行增删改查操作。  
 
-![](D:\迅雷下载\图片2.png)
+![](https://github.com/ZiWei-Luo/algPlt/blob/master/algPlt/algMag/templates/图片2.png)
 
 ### 3. 算法库管理
 **功能描述**：管理常见的背包问题算法模板及其参数的增删改查。用户可通过算法管理页面对算法模板和参数列表进行操作。  
 
-![](D:\迅雷下载\图片3.png)
+![](https://github.com/ZiWei-Luo/algPlt/blob/master/algPlt/algMag/templates/图片3.png)
 
 ### 4. 参数列表管理
 **功能描述**：专门用于管理算法对应的参数列表，支持对参数进行增删改查操作。  
 
-![](D:\迅雷下载\图片4.png)
+![](https://github.com/ZiWei-Luo/algPlt/blob/master/algPlt/algMag/templates/图片4.png)
 
 ### 5. 执行计划管理
 **功能描述**：用户可在此模块中设计执行计划，包括设置计划名称、选择问题实例和算法、设置执行参数等。  
 
-![](D:\迅雷下载\图片5.png)
+![](https://github.com/ZiWei-Luo/algPlt/blob/master/algPlt/algMag/templates/图片5.png)
 
-![](D:\迅雷下载\图片6.png)
+![](https://github.com/ZiWei-Luo/algPlt/blob/master/algPlt/algMag/templates/图片6.png)
 
 
 
 ### 6. 结果展示与分析
 **功能描述**：通过运行结果对实验进行深入分析，生成对应的折线图以分析算法性能好坏，以及生成盒图以分析算法的稳定性。  帮助科研人员快速理解和评估算法性能。
 
-![](D:\迅雷下载\图片7.png)
+![](https://github.com/ZiWei-Luo/algPlt/blob/master/algPlt/algMag/templates/图片7.png)
 
-![图片8](D:\迅雷下载\图片8.png)
+![图片8](https://github.com/ZiWei-Luo/algPlt/blob/master/algPlt/algMag/templates/图片8.png)
 
-![图片9](D:\迅雷下载\图片9.png)
+![图片9](https://github.com/ZiWei-Luo/algPlt/blob/master/algPlt/algMag/templates/图片9.png)
